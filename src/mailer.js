@@ -21,7 +21,7 @@ exports.sendConfirmationEmail = function ({ toUser }, id) {
       <p>You recieved message from ${process.env.GOOGLE_USER} with: </p>
       <p>Username: ${toUser.username}</p>
       <p>Email: ${toUser.email}</p>
-      <p>To activate your account please follow this link: <a target="_" href="http://localhost:3000/api/auth/active-account?id=${id}">Active your account</a></p>
+      <p>To activate your account please follow this link: <a target="_" href="https://localhost:3000/api/auth/active-account?id=${id}">Active your account</a></p>
       <p>Thank you!</p>
   `,
     };

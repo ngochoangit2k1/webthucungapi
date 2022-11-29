@@ -19,7 +19,7 @@ exports.sendResetPasswordEmail = function ({ myUser }, id) {
       html: `
       <p>You recieved message from ${process.env.GOOGLE_USER} with: </p>
       <p>Email: ${myUser.email}</p>
-      <p>To reset your password please follow this link: <a target="_" href="http://localhost:3000/api/auth/reset-password?id=${id}">Reset your password</a></p>
+      <p>To reset your password please follow this link: <a target="_" href="https://localhost:3000/api/auth/reset-password?id=${id}">Reset your password</a></p>
       <p>Thank you!</p>
   `,
     };
