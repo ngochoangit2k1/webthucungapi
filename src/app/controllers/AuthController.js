@@ -7,7 +7,7 @@ const { sendConfirmationEmail } = require("../../mailer");
 const { sendResetPasswordEmail } = require("../../resetPassword");
 
 //[POST]: /api/auth/register
-const createUser = async (req, res) => {
+const createUser = async (req, res, next) => {
   try {
     if (req.body.id) {
       const user = await User.findOneAndUpdate(

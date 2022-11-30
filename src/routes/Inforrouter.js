@@ -6,6 +6,6 @@ const {PostInfor, GetTnfro, DeleteInfor} = require('../app/controllers/InforCont
 
 router.post('/infor',PostInfor);
 router.get('/infor', GetTnfro);
-router.delete('/infor/:id',DeleteInfor);
+// router.delete('/infor/:id',DeleteInfor);
 
 module.exports = router;

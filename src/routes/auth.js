@@ -1,23 +1,19 @@
-const express = require("express");
+
+const express = require("express")
+const {signup, signin, googleAuth, logout} = require("../app/controllers/auth")
+
+
+
 const router = express.Router();
+// create a user
+router.post("/signup", signup)
+// sign in 
+router.post("/signin", signin)
 
-const AuthController = require("../app/controllers/AuthController");
-const Token = require("../app/models/Token");
-const { verifyAdmin, verifyUser } = require("../utils/verifyToken");
+// sign in with google
+router.post("/google", googleAuth)
 
-router.post("/register", AuthController.createUser);
-router.post("/login", AuthController.userLogin);
-router.post("/refresh-token", AuthController.refreshToken);
-router.post("/reset-password", AuthController.resetPassword);
-router.post("/change-password", AuthController.changePassword);
-router.post("/logout", AuthController.logout);
-router.get("/", AuthController.getToken);
-router.delete("/", verifyAdmin, async (req, res) => {
-  try {
-    await Token.remove();
-    res.status(200).json("Deleted all tokens");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-module.exports = router;
+router.post("/logout", logout)
+
+
+module.exports = router ;
